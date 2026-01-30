@@ -1,0 +1,16 @@
+{
+    "id": "customRunningApps",
+    "name": "Custom Running Apps",
+    "description": "Flexible Custom Widget for Showing Running Apps on Dank Bar",
+    "version": "0.1",
+    "compositors": ["niri"],
+    "author": "Michael Kushma",
+    "icon": "terminal",
+    "firstParty": true,
+    "component": "./CustomRunningApps.qml",
+    "settings": "./CustomRunningAppsSettings.qml",
+    "permissions": [
+        "settings_read",
+        "settings_write"
+    ]
+}
