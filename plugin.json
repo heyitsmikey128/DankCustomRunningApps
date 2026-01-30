@@ -5,7 +5,7 @@
     "version": "0.1",
     "compositors": ["niri"],
     "author": "Michael Kushma",
-    "icon": "terminal",
+    "icon": "widgets",
     "firstParty": true,
     "component": "./CustomRunningApps.qml",
     "settings": "./CustomRunningAppsSettings.qml",
