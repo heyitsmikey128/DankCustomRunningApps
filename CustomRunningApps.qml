@@ -13,10 +13,10 @@ PluginComponent {
     id: root
 
 
-    property int itemPercentage: parseInt(pluginData.itemPercentage) ?? 85
-    property int spaceBetweenItems: parseInt(pluginData.spaceBetweenItems) ?? 2
+    property int itemPercentage: parseInt(pluginData.itemPercentage) || 85
+    property int spaceBetweenItems: parseInt(pluginData.spaceBetweenItems) || 2
     property bool resizeOnHover: pluginData.resizeOnHover ?? true
-    property int resizePercentage: parseInt(pluginData.resizePercentage) ?? 125
+    property int resizePercentage: parseInt(pluginData.resizePercentage) || 125
     property bool expandedMode: false
 
     property var widgetData: null
