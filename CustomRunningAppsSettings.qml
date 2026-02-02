@@ -17,10 +17,21 @@ PluginSettings {
 
     SliderSetting {
         settingKey: "itemPercentage"
-        label: "App Icon Size"
-        defaultValue: 90
+        label: "Widget Size"
+        description: "Percentage of the Bar used by the widget" 
+        defaultValue: 100
         minimum: 10
         maximum: 110
+        unit: "%"
+    }
+
+    SliderSetting {
+        settingKey: "iconPercentage"
+        label: "Icon Size percentage"
+        description: "Size of Icon compared to focused app indicator" 
+        defaultValue: 85
+        minimum: 50
+        maximum: 120
         unit: "%"
     }
 
@@ -40,6 +51,14 @@ PluginSettings {
         font.pixelSize: Theme.fontSizeLarge
         font.weight: Font.Bold
         color: Theme.surfaceText
+    }
+
+    ToggleSetting {
+        id: highlightOnHover
+        settingKey: "highlightOnHover"
+        label: "Highlight App Icon"
+        description: "Highlight Icon on Mouse Hover"
+        defaultValue: true
     }
 
    ToggleSetting {

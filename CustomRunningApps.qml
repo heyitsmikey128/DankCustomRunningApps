@@ -13,9 +13,11 @@ PluginComponent {
     id: root
 
 
-    property int itemPercentage: parseInt(pluginData.itemPercentage) || 85
+    property int itemPercentage: parseInt(pluginData.itemPercentage) || 100
+    property int iconPercentage: parseInt(pluginData.iconPercentage) || 85
     property int spaceBetweenItems: parseInt(pluginData.spaceBetweenItems) || 2
     property bool resizeOnHover: pluginData.resizeOnHover ?? true
+    property bool highlightOnHover: pluginData.highlightOnHover ?? true
     property int resizePercentage: parseInt(pluginData.resizePercentage) || 125
     property bool expandedMode: false
 
@@ -36,7 +38,7 @@ PluginComponent {
 
     readonly property real preferredItemSize: {
         const borderWidth = (barConfig?.widgetOutlineEnabled ?? false) ? (barConfig?.widgetOutlineThickness ?? 1) : 0;
-        return itemPercentage / 100 * barThickness - borderWidth;
+        return Math.floor(itemPercentage / 100 * barThickness - borderWidth * 2);
     }
 
     readonly property real outlineThickness: (barConfig?.widgetOutlineEnabled ?? false) ? (barConfig?.widgetOutlineThickness ?? 1) : 0;
@@ -371,7 +373,7 @@ PluginComponent {
                             if (isFocused) {
                                 return mouseArea.containsMouse ? Theme.primarySelected : Theme.withAlpha(Theme.primary, 0.2);
                             }
-                            return mouseArea.containsMouse ? Theme.widgetBaseHoverColor : "transparent";
+                            return highlightOnHover && mouseArea.containsMouse ? Theme.widgetBaseHoverColor : "transparent";
                         }
 
                         // App icon
@@ -379,12 +381,14 @@ PluginComponent {
                             id: iconImg
                             anchors.centerIn: parent
                             width: {
-                                const borderWidth = (barConfig?.widgetOutlineEnabled ?? false) ? (barConfig?.widgetOutlineThickness ?? 1) : 0;
-                                return root.itemPercentage / 100 * root.barThickness - borderWidth * 2;
+                                //const borderWidth = (barConfig?.widgetOutlineEnabled ?? false) ? (barConfig?.widgetOutlineThickness ?? 1) : 0;
+                                //return Math.round((root.itemPercentage / 100 * root.barThickness - borderWidth * 2) * .90);
+                                return Math.floor(preferredItemSize * (iconPercentage / 100));
                             }
                             height: {
-                                const borderHeight = (barConfig?.widgetOutlineEnabled ?? false) ? (barConfig?.widgetOutlineThickness ?? 1) : 0;
-                                return root.itemPercentage / 100 * root.barThickness - borderHeight * 2;
+                                //const borderHeight = (barConfig?.widgetOutlineEnabled ?? false) ? (barConfig?.widgetOutlineThickness ?? 1) : 0;
+                                //return Math.round((root.itemPercentage / 100 * root.barThickness - borderHeight * 2) * .90);
+                                return Math.floor(preferredItemSize * (iconPercentage / 100));
                             }
                             source: {
                                 root._desktopEntriesUpdateTrigger;
