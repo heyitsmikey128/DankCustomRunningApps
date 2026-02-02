@@ -36,10 +36,12 @@ OR
 Open the plugin settings and adjust:
 
 ### Size Settings
-- **App Icon Size** — controls the icon size
+- **Widget Size** — controls the total percentage of the bar used by the widget
+- **App Icon Size** — controls the icon size in reference to the widget. This make the background more/less obvious depending on settings.
 - **App Icon Spacing** — controls spacing between running apps
 
 ### Hover Settings
+- **Highlight App Icon** — enables/disables the background highlight when hover over apps
 - **Resize App Icon** — enables/disables hover resizing
 - **App Resize Percentage** — how much the icon grows/shrinks on hover
 
