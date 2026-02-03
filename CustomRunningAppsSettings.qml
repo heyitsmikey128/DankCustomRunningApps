@@ -5,7 +5,7 @@ import qs.Widgets
 
 PluginSettings {
     id: root
-    pluginId: "customRunningAppsDev"
+    pluginId: "customRunningApps"
 
     //SIZE SETTINGS//
 
