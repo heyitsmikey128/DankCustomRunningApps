@@ -3,7 +3,7 @@
 A flexible widget for **showing running applications on the Dank Bar**, with user-controlled **icon size**, **spacing**, and **hover** behavior.
 
 - **Plugin ID:** `customRunningApps`
-- **Version:** 0.1
+- **Version:** 0.4
 - **Author:** Michael Kushma
 - **Supported compositor(s):** `niri`
 
