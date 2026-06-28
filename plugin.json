@@ -2,7 +2,7 @@
     "id": "customRunningApps",
     "name": "Custom Running Apps",
     "description": "Flexible Custom Widget for Showing Running Apps on Dank Bar",
-    "version": "1.0",
+    "version": "1.0.0",
     "compositors": ["any"],
     "author": "Michael Kushma",
     "icon": "widgets",
